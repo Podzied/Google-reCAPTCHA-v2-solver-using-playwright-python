@@ -59,7 +59,7 @@ class SolveCaptcha:
         if s.get_attribute("aria-checked") != "false":  # solved already
             return
 
-        self.main_frame = self.page.frame(name=page.locator(
+        self.main_frame = self.page.frame(name=self.page.locator(
             "//iframe[contains(@src,'https://www.google.com/recaptcha/api2/bframe?')]").get_attribute("name"))
         self.main_frame.click("id=recaptcha-audio-button")
 
